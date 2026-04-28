@@ -59,11 +59,6 @@ Se realizaron pruebas para:
 npm install
 npm start
 
-
-
-
-
-
 📂 Estructura del proyecto
 src/
  ├── config
