@@ -5,7 +5,8 @@ API REST desarrollada con Node.js, Express, JWT y Sequelize (SQLite).
 ---
 
 ## 📌 Descripción
-Sistema de gestión de videojuegos con autenticación de usuarios y control de acceso mediante JWT.
+Sistema de gestión de videojuegos con autenticación de usuarios y control de acceso mediante JWT.  
+Cada usuario puede registrarse, iniciar sesión y gestionar videojuegos mediante una API REST segura.
 
 ---
 
@@ -21,21 +22,34 @@ Sistema de gestión de videojuegos con autenticación de usuarios y control de a
 ## 🔐 Autenticación
 - Registro de usuarios
 - Login con generación de token JWT
-- Protección de rutas privadas
+- Protección de rutas privadas mediante middleware
 
 ---
 
 ## 📡 Endpoints
 
 ### 🔑 Auth
-- POST /api/auth/register
-- POST /api/auth/login
+- POST /api/auth/register → Registrar usuario
+- POST /api/auth/login → Iniciar sesión
 
 ### 🎮 Games
-- GET /api/games
-- POST /api/games (🔒 protegido)
-- PUT /api/games/:id (🔒 protegido)
-- DELETE /api/games/:id (🔒 protegido)
+- GET /api/games → Listar videojuegos
+- POST /api/games → Crear videojuego (🔒 protegido)
+- PUT /api/games/:id → Actualizar videojuego (🔒 protegido)
+- DELETE /api/games/:id → Eliminar videojuego (🔒 protegido)
+
+---
+
+## 🧪 Pruebas de la API
+La API fue probada utilizando Postman.
+
+Se realizaron pruebas para:
+- Registro de usuarios
+- Login con JWT
+- Creación de videojuegos
+- Consulta de videojuegos
+- Actualización y eliminación de registros
+- Validación de rutas protegidas con token JWT
 
 ---
 
@@ -44,6 +58,10 @@ Sistema de gestión de videojuegos con autenticación de usuarios y control de a
 ```bash
 npm install
 npm start
+
+
+
+
 
 
 📂 Estructura del proyecto
@@ -55,11 +73,3 @@ src/
  ├── routes
  ├── app.js
  └── server.js
-
-
- ✨ Mejoras implementadas
- Autenticación JWT
- Relación usuario → juegos
- Protección de rutas
- Uso de Sequelize ORM
- Manejo de errores básico
